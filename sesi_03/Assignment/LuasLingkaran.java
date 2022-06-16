@@ -15,6 +15,6 @@ public class LuasLingkaran {
 
         L = phi * r * r;
 
-        System.out.println("Luas lingkaran: " + L + " cm");
+        System.out.println("Luas lingkaran: " + L + " cm^2");
     }
 }
