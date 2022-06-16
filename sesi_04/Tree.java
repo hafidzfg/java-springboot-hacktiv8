@@ -73,10 +73,10 @@ public class Tree {
         int a;
         while (menu != 3) {
             System.out.print("1. input\n2. view\n3. exit\n:");
-            menu = tr.in.nextInt();
+            menu = Tree.in.nextInt();
             if (menu == 1) {
                 System.out.print("Masukkan angka: ");
-                a = tr.in.nextInt();
+                a = Tree.in.nextInt();
                 if (r == 1) {
                     root.input(a);
                     r--;
