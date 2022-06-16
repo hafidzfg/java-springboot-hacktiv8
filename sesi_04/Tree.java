@@ -64,15 +64,6 @@ public class Tree {
         }
 
     }
-}
-
-class node {
-    node left, right;
-    int value;
-
-    public void input(int a) {
-        value = a;
-    }
 
     public static void main(String[] args) {
         Tree tr = new Tree();
@@ -99,5 +90,14 @@ class node {
                 System.out.println("Input salah");
             System.out.println(" ");
         }
+    }
+}
+
+class node {
+    node left, right;
+    int value;
+
+    public void input(int a) {
+        value = a;
     }
 }
