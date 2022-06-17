@@ -20,8 +20,7 @@ git checkout -b master
 
 3. cara menggunakan git
 
----
-
+```
 git init
 git remote add origin url
 git add README.md
@@ -29,5 +28,4 @@ git commit -m "first commit"
 git checkout -b main
 git pull origin branchname --allow-unrelated-histories
 git push -u origin main
-
-## pull git pertama kali jika sudah remote
+```
