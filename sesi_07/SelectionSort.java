@@ -6,14 +6,14 @@ public class SelectionSort {
         Scanner scan = new Scanner(System.in);
 
         // input jumlah data
-        System.out.println("Masukkan jumlah data: ");
+        System.out.print("Masukkan jumlah data: ");
         int jmlData = scan.nextInt();
 
         // input nilai tiap data
         int[] data = new int[jmlData];
         System.out.println();
         for (int x = 0; x < jmlData; x++) {
-            System.out.println("Input nilai data ke-" + (x + 1) + ": ");
+            System.out.print("Input nilai data ke-" + (x + 1) + ": ");
             data[x] = scan.nextInt();
         }
 
@@ -29,9 +29,9 @@ public class SelectionSort {
         for (int i = 0; i < jmlData - 1; i++) {
             System.out.println("Interasi ke-" + (i + 1) + ": ");
             for (int y = 0; y < jmlData; y++)
-                System.out.print(" ");
+                System.out.print(data[y] + " ");
 
-            System.out.println("  Apakah data " + data[i] + " sudah benar pada urutannya?");
+            System.out.println("   Apakah data " + data[i] + " sudah benar pada urutannya?");
 
             boolean tukar = false;
             int index = 0;
@@ -63,6 +63,7 @@ public class SelectionSort {
         System.out.print("Data setelah disorting: ");
         for (int i = 0; i < jmlData; i++)
             System.out.print(data[i] + " ");
+        scan.close();
     }
 
 }
