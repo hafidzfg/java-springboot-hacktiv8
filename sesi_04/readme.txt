@@ -20,10 +20,9 @@ Untuk efisiensi proses search, terdapat aturan:
 2. Child node sebelah kanan harus lebih besar dari root node
 
 Terdapat 3 jenis cara untuk melakukan penelusuran data (traversal) pada Binary Search Tree :
-● PreOrder : 
-Print data, telusur ke kiri, telusur ke kanan
-● InOrder : Telusur ke kiri, print data, telusur ke kanan
-● PostOrder : Telusur ke kiri, telusur ke kanan, print data
+- PreOrder : Print data, telusur ke kiri, telusur ke kanan
+- InOrder : Telusur ke kiri, print data, telusur ke kanan
+- PostOrder : Telusur ke kiri, telusur ke kanan, print data
 
 Untuk melihat demonstrasi ketiga jenis cara penelusuran di atas, jalankan:
     java Tree
