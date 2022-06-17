@@ -1,5 +1,8 @@
-
 public interface JuaraKelas {
-    Integer rangkingKelas = 2;
+    void siapa();
+
+    void jalan();
+
+    void tidur();
 
 }

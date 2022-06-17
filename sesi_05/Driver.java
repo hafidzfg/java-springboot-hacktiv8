@@ -2,6 +2,7 @@ public class Driver {
     public static void main(String[] args) {
         // bentuk #1 (class sendiri)
         AnakHilang i = new AnakHilang();
+        i.siapa();
         i.tidur();
 
         // bentuk #2 (class lain)
