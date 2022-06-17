@@ -1,4 +1,4 @@
-package BangunDatar;
+package Inheritance;
 
 public class Persegi extends BangunDatar {
     float sisi;

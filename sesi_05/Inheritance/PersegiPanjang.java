@@ -1,4 +1,4 @@
-package BangunDatar;
+package Inheritance;
 
 public class PersegiPanjang extends BangunDatar {
     float panjang, lebar;

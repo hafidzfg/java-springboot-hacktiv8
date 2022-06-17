@@ -1,4 +1,4 @@
-package BangunDatar;
+package Inheritance;
 
 public class SegitigaSikuSiku extends BangunDatar {
     float alas, tinggi;

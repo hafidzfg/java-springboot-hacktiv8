@@ -1,3 +1,5 @@
+package Polymorphism;
+
 public class Emak {
     public Integer jumlahAnak = 2;
     public String pendidikan = "S3";

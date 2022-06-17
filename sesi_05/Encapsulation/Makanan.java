@@ -1,3 +1,5 @@
+package Encapsulation;
+
 public class Makanan {
     public static void main(String[] args) {
         // create instance/object from restoran class
