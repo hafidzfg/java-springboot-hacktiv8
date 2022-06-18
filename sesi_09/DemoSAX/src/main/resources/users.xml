@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user id="1">
+        <id>16</id>
+        <name>Hafidz</name>
+        <gender>Male</gender>
+        <role>Student</role>
+        <country>Indonesia</country>
+        <planet>Mars</planet>
+    </user>
+    <user id="2">
+        <id>17</id>
+        <name>Cat</name>
+        <gender>Male</gender>
+        <role>Pet</role>
+        <country>NZ</country>
+        <planet>Venus</planet>
+    </user>
+</users>
