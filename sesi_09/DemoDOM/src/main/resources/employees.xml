@@ -1,0 +1,17 @@
+<employees>
+    <employee id="111">
+        <firstName>Hafidz</firstName>
+        <lastName>Firmansyah</lastName>
+        <location>Earth</location>
+    </employee>
+    <employee id="121">
+        <firstName>RaRa</firstName>
+        <lastName>Rasputin</lastName>
+        <location>Russia</location>
+    </employee>
+    <employee id="131">
+        <firstName>Little</firstName>
+        <lastName>Prince</lastName>
+        <location>Pluto</location>
+    </employee>
+</employees>
