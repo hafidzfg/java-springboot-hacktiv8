@@ -8,7 +8,7 @@ Lakukan import "sesi10.sql" menggunakan DBMS phpmyadmin atau adminer. Anda juga 
 
 "sesi10.sql" berisi DDL yang akan membentuk
 
-1. Database "employe"
+1. Database "employee"
 2. Tabel:
    - tb_gaji
    - tb_menu
