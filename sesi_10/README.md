@@ -4,6 +4,18 @@ Pada sesi ini, dilakukan latihan Data Definition Languange (DDL) dan Data Manipu
 
 [XAMPP](https://www.apachefriends.org/download.html)
 
+## Practice
+
+Dilakukan latihan pembuatan database dalam query "mahasiswa.sql". Query tersebut akan membentuk sebuah database (MySQL) bernama "db_mahasiswa", yang berisi tabel:
+
+1. tb_mahasiswa
+2. tb_dosen
+3. tb_matkul
+4. tb_ortu
+
+## Challenge
+
+Dilakukan pula latihan lebih lanjut mengenai DDL dan DML melalui query "challenge.sql". <br>
 Lakukan import "challenge.sql" menggunakan DBMS phpmyadmin atau adminer. Anda juga dapat menjalankan query yang terdapat dalam "challenge.sql"
 
 "challenge.sql" berisi DDL yang akan membentuk
