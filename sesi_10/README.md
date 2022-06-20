@@ -2,7 +2,7 @@
 
 Pada sesi ini, dilakukan latihan Data Definition Languange (DDL) dan Data Manipulation Language (DML) menggunakan MySQL. Untuk mengoperasikannya, install XAMPP:
 
-[XAMPP] (https://www.apachefriends.org/download.html)
+[XAMPP](https://www.apachefriends.org/download.html)
 
 Lakukan import "sesi10.sql" menggunakan DBMS phpmyadmin atau adminer. Anda juga dapat menjalankan query yang terdapat dalam "sesi10.sql"
 
