@@ -4,9 +4,9 @@ Pada sesi ini, dilakukan latihan Data Definition Languange (DDL) dan Data Manipu
 
 [XAMPP](https://www.apachefriends.org/download.html)
 
-Lakukan import "sesi10.sql" menggunakan DBMS phpmyadmin atau adminer. Anda juga dapat menjalankan query yang terdapat dalam "sesi10.sql"
+Lakukan import "challenge.sql" menggunakan DBMS phpmyadmin atau adminer. Anda juga dapat menjalankan query yang terdapat dalam "challenge.sql"
 
-"sesi10.sql" berisi DDL yang akan membentuk
+"challenge.sql" berisi DDL yang akan membentuk
 
 1. Database "employee"
 2. Tabel:
