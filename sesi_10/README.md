@@ -29,4 +29,4 @@ Lakukan import "challenge.sql" menggunakan DBMS phpmyadmin atau adminer. Anda ju
    - tb_transaksi
 3. View:
    - data_transaksi
-   - data-gaji
+   - data_gaji
