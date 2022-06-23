@@ -1,6 +1,6 @@
-# Spring Boot JPA practice (Static)
+# Spring Boot JPA practice
 
-Pada sesi ini, dilakukan practice pembuatan dan manipulasi database dengan relasi yang berbeda beda:
+Pada sesi ini, dilakukan practice pembuatan dan manipulasi database MySQL menggunakan ORM JPA dengan relasi yang berbeda beda:
 
 1. BelajarJPABook <br>
    One-to-Many
