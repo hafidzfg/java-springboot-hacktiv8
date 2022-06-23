@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS mahasiswa(
+    id VARCHAR(64) NOT NULL,
+    nim VARCHAR(255) NOT NULL UNIQUE,
+    nama VARCHAR(255) NOT NULL,
+    ipk FLOAT(4,2),
+    jurusan VARCHAR(255) NOT NULL,
+    PRIMARY KEY(id)
+)ENGINE=InnoDB;
+	
