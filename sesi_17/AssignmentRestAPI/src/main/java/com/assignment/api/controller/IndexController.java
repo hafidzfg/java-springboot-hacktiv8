@@ -1,12 +1,12 @@
 package com.assignment.api.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController // tag sebagai rest controller
-@RequestMapping(value = "/") // tag untuk membuat endpoint "/" sebagai landing page
+@Controller // tag controller
 public class IndexController {
 	
+	@GetMapping("/hello")
 	public String index() {
 		return "index";
 	}
