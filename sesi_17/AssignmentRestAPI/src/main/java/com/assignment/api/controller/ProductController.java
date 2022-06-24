@@ -21,7 +21,7 @@ public class ProductController {
 	@CrossOrigin
 	@GetMapping("/products") // tag bikin endpoint get
 	public List<Product> list() {
-		return productService.listAllUser();
+		return productService.listAllProduct();
 	}
 
 	@CrossOrigin
