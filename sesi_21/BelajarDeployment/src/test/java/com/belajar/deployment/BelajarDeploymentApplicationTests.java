@@ -1,11 +1,11 @@
-package com.belajar.firebase;
+package com.belajar.deployment;
 
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class BelajarFirebaseApplicationTests {
+public class BelajarDeploymentApplicationTests {
 
 	@Test
 	public void contextLoads() {
