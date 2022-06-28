@@ -32,32 +32,32 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core</artifactId>
-            <version>5.1.6.RELEASE</version>
+            <version>5.1.6.RELEASE</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-web</artifactId>
-            <version>5.1.6.RELEASE</version>
+            <version>5.1.6.RELEASE</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.rest-assured/spring-mock-mvc -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>spring-mock-mvc</artifactId>
-            <version>4.3.1</version>
+            <version>4.3.1</version><!--$NO-MVN-MAN-VER$-->
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-            <version>5.1.6.RELEASE</version>
+            <version>5.1.6.RELEASE</version><!--$NO-MVN-MAN-VER$-->
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.20</version>
+            <version>1.18.20</version><!--$NO-MVN-MAN-VER$-->
             <scope>provided</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
@@ -90,7 +90,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>3.8.1</version>
+            <version>3.8.1</version><!--$NO-MVN-MAN-VER$-->
             <scope>test</scope>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
