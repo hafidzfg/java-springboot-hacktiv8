@@ -31,7 +31,6 @@ import com.hafidz.bus.security.jwt.JwtUtils;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 
-
 @CrossOrigin(origins = "*", maxAge = 3600, methods = { RequestMethod.PUT, RequestMethod.POST, RequestMethod.GET })
 @RestController
 @RequestMapping("/api/v1/user")
@@ -54,18 +53,20 @@ public class UserController {
 
 	@Autowired
 	JwtUtils jwtUtils;
-	
+
 	@GetMapping("/")
-	@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
+	@PreAuthorize("hasRole('ADMIN')")
 	@ApiOperation(value = "", authorizations = { @Authorization(value = "apiKey") })
 	public ResponseEntity<?> getAllUser() {
 		List<UserCustomRequest> dataArrResult = new ArrayList<>();
 		for (User dataArr : userRepository.findAll()) {
-			dataArrResult.add(new UserCustomRequest(dataArr.getFirstName(), dataArr.getLastName(), dataArr.getMobileNumber()));
+			dataArrResult.add(
+					new UserCustomRequest(dataArr.getFirstName(), dataArr.getLastName(), dataArr.getMobileNumber()));
 		}
-		return ResponseEntity.ok(new MessageResponse<UserCustomRequest>(true, "Success Retrieving Data", dataArrResult));
+		return ResponseEntity
+				.ok(new MessageResponse<UserCustomRequest>(true, "Success Retrieving Data", dataArrResult));
 	}
-	
+
 	@GetMapping("/{id}")
 	@ApiOperation(value = "", authorizations = { @Authorization(value = "apiKey") })
 	@PreAuthorize("hasRole('ADMIN') or hasRole('USER')")
@@ -74,8 +75,10 @@ public class UserController {
 		if (user == null) {
 			return ResponseEntity.notFound().build();
 		} else {
-			UserCustomRequest dataResult = new UserCustomRequest(user.getFirstName(), user.getLastName(), user.getMobileNumber());
-			return ResponseEntity.ok(new MessageResponse<UserCustomRequest>(true, "Success Retrieving Data", dataResult));
+			UserCustomRequest dataResult = new UserCustomRequest(user.getFirstName(), user.getLastName(),
+					user.getMobileNumber());
+			return ResponseEntity
+					.ok(new MessageResponse<UserCustomRequest>(true, "Success Retrieving Data", dataResult));
 		}
 	}
 
@@ -104,15 +107,15 @@ public class UserController {
 		} else {
 			strRoles.forEach(role -> {
 				switch (role) {
-				case "admin":
-					Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(adminRole);
-					break;
-				default:
-					Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(userRole);
+					case "admin":
+						Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(adminRole);
+						break;
+					default:
+						Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+								.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+						roles.add(userRole);
 				}
 			});
 		}
@@ -161,7 +164,7 @@ public class UserController {
 
 		return ResponseEntity.ok(updatedUser);
 	}
-	
+
 	@DeleteMapping("/{id}")
 	@ApiOperation(value = "", authorizations = { @Authorization(value = "apiKey") })
 	@PreAuthorize("hasRole('ADMIN')")
@@ -169,10 +172,10 @@ public class UserController {
 		String result = "";
 		try {
 			userRepository.findById(id).get();
-			
+
 			result = "User with id: " + id + " is deleted";
 			userRepository.deleteById(id);
-			
+
 			return ResponseEntity.ok(new MessageResponse<User>(true, result));
 		} catch (Exception e) {
 			result = "User with id: " + id + " not found";
