@@ -2,15 +2,15 @@
 
 Pada final project ini dibuat APIs untuk sebuah aplikasi pemesanan tiket bus.
 
-Dibuat oleh:
-Nama: Hafidz Firmansyah Ghufara
-Kode Peserta: JVSB001ONL008
-Git: [FinalProject](https://github.com/hafidzfg/java-springboot-hacktiv8/tree/master/sesi_23)
+Dibuat oleh:<br>
+Nama: Hafidz Firmansyah Ghufara <br>
+Kode Peserta: JVSB001ONL008 <br>
+Git: [FinalProject](https://github.com/hafidzfg/java-springboot-hacktiv8/tree/master/sesi_23)<br>
 
 ## Requirement
 
 1. Java 1.8
-2. MySQL/XAMPP
+2. MySQL/XAMPP <br>
    Buat sebuah database dengan nama `h8_bus`
 3. Maven
 4. IDE (Project ini dibuat dengan Eclipse IDE)
@@ -19,7 +19,7 @@ Git: [FinalProject](https://github.com/hafidzfg/java-springboot-hacktiv8/tree/ma
 
 1. Navigasi ke dalam folder `FinalProject`
 2. Jalankan database kamu
-3. Jalankan: `mvn spring-boot:run`
+3. Jalankan: `mvn spring-boot:run` <br>
    Pada tahap ini program akan membuat tabel di dalam database dan mengeksekusi beberapa migrasi dengan FlyWay
 4. Hit API otentikasi sebelum mengakses API yang lain:
 
