@@ -99,73 +99,74 @@ public class ReservationController {
 
 		if (schedule.getId() == null) {
 			return ResponseEntity.badRequest().build();
+		} else {
+			// Get journey date berdasarkan column trip date milik trip schedule
+			String journeyDate = schedule.getTripDate();
+
+			// Get passenger
+			User passenger = userRepository.findUserById(passengerId);
+
+			// Get LocalDate hari ini
+			LocalDate today = LocalDate.now();
+
+			// Parse date
+			String tripDateString = tripScheduleRepository.findTripScheduleById(tripScheduleId).getTripDate();
+			LocalDate tripDate = LocalDate.parse(tripDateString);
+
+			// check if trip schedule valid
+			if (tripDate.isBefore(today)) {
+				return ResponseEntity.badRequest().build();
+			}
+
+			// check if user exist
+			if (passenger.getId() == null) {
+				return new ResponseEntity<>("Passenger account not found", HttpStatus.BAD_REQUEST);
+			}
+
+			// Check available seats
+			int availableSeats = schedule.getAvailableSeats();
+			if (availableSeats == 0) {
+				return new ResponseEntity<>("No ticket available", HttpStatus.BAD_REQUEST);
+			}
+
+			// check if user already booked the seat
+			int bookedSeatsByPassenger = ticketRepository.getBookedSeatsByPassengerId(passengerId, tripScheduleId);
+
+			// check if user already has a ticket
+			if (bookedSeatsByPassenger > 0) {
+				return new ResponseEntity<>("You already have a ticket", HttpStatus.BAD_REQUEST);
+			}
+
+			// check bus capacity
+			int capacity = schedule.getTrip().getBus().getCapacity();
+
+			// check if seat number valid
+			if (seatNumber > capacity) {
+				return new ResponseEntity<>("Seat number is not valid", HttpStatus.BAD_REQUEST);
+			}
+
+			// get all booked seat number
+			List<Integer> numberBooked = tripScheduleRepository.findAllSeatNumberBooked(tripScheduleId);
+
+			// check if seat is already booked
+			if (numberBooked.contains(seatNumber)) {
+				return new ResponseEntity<>("Seat number already booked, please choose the other seat", HttpStatus.BAD_REQUEST);
+			}
+
+			// Create new ticket object
+			Ticket ticket = new Ticket(seatNumber, cancellable, journeyDate, passenger, schedule);
+
+			// save ticket to database
+			ticketRepository.save(ticket);
+
+			// minus the available seats
+			schedule.setAvailableSeats(availableSeats - 1);
+			tripScheduleRepository.save(schedule);
+
+			return new ResponseEntity<>("Reservation success!", HttpStatus.OK);
 		}
 
-		// Get journey date berdasarkan column trip date milik trip schedule
-		String journeyDate = schedule.getTripDate();
-
-		// Get passenger
-		User passenger = userRepository.findUserById(passengerId);
-
-		// Get LocalDate hari ini
-		LocalDate today = LocalDate.now();
-		System.out.println("-----TODAY DATE-----: " + today);
-
-		// Parse date
-		String tripDateString = tripScheduleRepository.findTripScheduleById(tripScheduleId).getTripDate();
-		LocalDate tripDate = LocalDate.parse(tripDateString);
-
-		// check if trip schedule valid
-		if (tripDate.isBefore(today)) {
-			return ResponseEntity.badRequest().build();
-		}
-
-		// check if user exist
-		if (passenger.getId() == null) {
-			return new ResponseEntity<>("Passenger account not found", HttpStatus.BAD_REQUEST);
-		}
-
-		// Check available seats
-		int availableSeats = schedule.getAvailableSeats();
-		if (availableSeats == 0) {
-			return new ResponseEntity<>("No ticket available", HttpStatus.BAD_REQUEST);
-		}
-
-		// check if user already booked the seat
-		int bookedSeatsByPassenger = ticketRepository.getBookedSeatsByPassengerId(passengerId, tripScheduleId);
-
-		// check if user already has a ticket
-		if (bookedSeatsByPassenger > 0) {
-			return new ResponseEntity<>("You already have a ticket", HttpStatus.BAD_REQUEST);
-		}
-
-		// check bus capacity
-		int capacity = schedule.getTrip().getBus().getCapacity();
-
-		// check if seat number valid
-		if (seatNumber > capacity) {
-			return new ResponseEntity<>("Seat number is not valid", HttpStatus.BAD_REQUEST);
-		}
-
-		// get all booked seat number
-		List<Integer> numberBooked = tripScheduleRepository.findAllSeatNumberBooked(tripScheduleId);
-
-		// check if seat is already booked
-		if (numberBooked.contains(seatNumber)) {
-			return new ResponseEntity<>("Seat number already booked, please choose the other seat", HttpStatus.BAD_REQUEST);
-		}
-
-		// Create new ticket object
-		Ticket ticket = new Ticket(seatNumber, cancellable, journeyDate, passenger, schedule);
-
-		// save ticket to database
-		ticketRepository.save(ticket);
-
-		// minus the available seats
-		schedule.setAvailableSeats(availableSeats - 1);
-		tripScheduleRepository.save(schedule);
-
-		return new ResponseEntity<>("Reservation success!", HttpStatus.OK);
+		
 	}
 
 }

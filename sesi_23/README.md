@@ -2,6 +2,11 @@
 
 Pada final project ini dibuat APIs untuk sebuah aplikasi pemesanan tiket bus.
 
+Dibuat oleh:
+Nama: Hafidz Firmansyah Ghufara
+Kode Peserta: JVSB001ONL008
+Git: [FinalProject](https://github.com/hafidzfg/java-springboot-hacktiv8/tree/master/sesi_23)
+
 ## Requirement
 
 1. Java 1.8
